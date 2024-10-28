@@ -17,6 +17,10 @@ import Register from "../views/auth/register.jsx";
 //import view login
 import Login from "../views/auth/login.jsx";
 
+import Book from "../views/auth/book.jsx";
+
+import Loan from "../views/auth/loan.jsx";
+
 //import view admin dashboard
 import Dashboard from "../views/admin/dashboard/index.jsx";
 
@@ -47,6 +51,17 @@ export default function AppRoutes() {
             {/* route "/login" */}
             <Route path="/login" element={
                 isAuthenticated ? <Navigate to="/admin/dashboard" replace /> : <Login />
+            } />
+            
+             {/* route "/books" */}
+             <Route path="/books" element={
+                isAuthenticated ? <Navigate to="/admin/dashboard" replace /> : <Book />
+            } />
+
+
+            {/* route "/loans" */}
+            <Route path="/loans" element={
+                isAuthenticated ? <Navigate to="/admin/dashboard" replace /> : <Loan />
             } />
 
             {/* route "/admin/dashboard" */}

@@ -14,7 +14,7 @@ export default function Register() {
     const navigate = useNavigate();
 
     //define state
-    const [name, setName] = useState("");
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -26,8 +26,7 @@ export default function Register() {
         e.preventDefault();
 
         //call api register
-        await api.post('/api/register', {
-            name: name,
+        await api.post('/auth/register', {
             email: email,
             password: password,
         })
@@ -61,15 +60,7 @@ export default function Register() {
                                 )
                             }
                             <form onSubmit={register}>
-                                <div className="row">
-                                    <div className="col-md-12 mb-3">
-                                        <div className="form-group">
-                                            <label className="mb-1 fw-bold">Full Name</label>
-                                            <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="form-control"
-                                                placeholder="Full Name" />
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
